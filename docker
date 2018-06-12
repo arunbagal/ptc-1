@@ -1,12 +1,1 @@
-		create a database container
-			docker run --name db11 -e MYSQL_ROOT_PASSWORD=mypass -d mysql:5.7
-		create a dbadmin container(php)
-			docker run -p 80:80 --link db11:mysql phpmyadmin/phpmyadmin
-
-			create table dept11 (deptno varchar(2) primary key, dname varchar(20), loc varchar(20))
-			insert into dept11 values('10','HR','Hyd');
-			insert into dept11 values('20','IT','Pnq');
-			insert into dept11 values('30','TRIN','Hyd');
-		Create a tomcat container
-			docker run -p 8080:8080 --name mytom --link db11:myrdbms bitnami/tomcat
-			docker cp demo2.war ...
+docker run --mount type=bind,src="/c/Users/admin/demo11",dst="/ptc" bitnami/tomcat
